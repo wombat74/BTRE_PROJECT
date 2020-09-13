@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,12 +25,14 @@ SECRET_KEY = 't7*foda1x^%d+hjk6_c9tp0(5*7u+9y&55667y=u2u&exl=6(6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# List of Host domains that this website can serve
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Can have multiple apps per project. 
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# A lot of this middleware is security based.
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,8 +52,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# String that represents the full import path to the ROOT_URLCONF
+# where the initial URL file is located. Usully the name of the project (btre.urls)
 ROOT_URLCONF = 'btre.urls'
 
+# Templates are used to generate HTML for the application
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,6 +73,7 @@ TEMPLATES = [
     },
 ]
 
+# Path to the built in WSGI_APPLICATION object that django built in servers use.
 WSGI_APPLICATION = 'btre.wsgi.application'
 
 
@@ -117,4 +124,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# This is the path that we will use for static files (e.g CSS, JavaScript, images..).
 STATIC_URL = '/static/'
