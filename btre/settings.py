@@ -60,7 +60,7 @@ ROOT_URLCONF = 'btre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # Tell Django to look in the root directory/templates folder for templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
