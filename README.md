@@ -1,1 +1,1 @@
-#Repo for Udemy "Django Dev to Deployment" tutorial
+# Repo for Udemy "Django Dev to Deployment" tutorial
