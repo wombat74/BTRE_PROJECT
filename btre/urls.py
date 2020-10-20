@@ -12,5 +12,6 @@ urlpatterns = [
     path('', include('pages.urls')), # linking to the urls.py of the pages app
     path('listings/', include('listings.urls')), # linking to the urls.py of the pages app
     path('accounts/', include('accounts.urls')),
+    path('contacts/', include('contacts.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Add this to have access to images
