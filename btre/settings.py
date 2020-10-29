@@ -156,3 +156,8 @@ MESSAGE_TAGS = {
 # EMAIL_USER = '' # User email
 # EMAIL_HOST = '' # User password
 # EMAIL_USE_TLS=True
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
